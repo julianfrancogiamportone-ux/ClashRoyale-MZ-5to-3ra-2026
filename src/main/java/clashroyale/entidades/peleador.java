@@ -1,4 +1,4 @@
-package entidades;
+package clashroyale.entidades;
 import java.util.ArrayList;
 
 import jakarta.persistence.*;
@@ -12,8 +12,8 @@ public class peleador {
         private int energia; 
         private float defensaBase;
         private Arma armaEquipada;
-        private ArrayList [] inventario;
-        private ArrayList [] habilidades;
+        private ArrayList<> inventario;
+        private ArrayList<> habilidades;
         
         
         
@@ -66,13 +66,13 @@ public class peleador {
 
 
 
-        public ArrayList[] getInventario() {
+        public ArrayList<> getInventario() {
             return inventario;
         }
 
 
 
-        public ArrayList[] getHabilidades() {
+        public ArrayList<> getHabilidades() {
             return habilidades;
         }
 
@@ -114,13 +114,13 @@ public class peleador {
 
 
 
-        public void setInventario(ArrayList[] inventario) {
+        public void setInventario(ArrayList<> inventario) {
             this.inventario = inventario;
         }
 
 
 
-        public void setHabilidades(ArrayList[] habilidades) {
+        public void setHabilidades(ArrayList<> habilidades) {
             this.habilidades = habilidades;
         }
 

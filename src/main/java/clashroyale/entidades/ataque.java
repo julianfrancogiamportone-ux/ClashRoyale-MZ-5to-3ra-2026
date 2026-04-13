@@ -1,6 +1,9 @@
 package clashroyale.entidades;
 
 import jakarta.persistence.*;
+
+import java.util.List;
+
 @Entity
 public class ataque {
 
@@ -11,30 +14,34 @@ public class ataque {
     private int costoEnergia;
     private int danioBase;
 
-public int getId() {
-    return id;
-}
-public void setId(int Id) {
-    this.id = id;
-}
-public  String getNombre(){
-    return nombre;
-}
-public void setNombre(String nombre) {
-    this.nombre = nombre;
-}
-public int getcostoEnergia() {
-    return costoEnergia;
-}
-public void setcostoEnergia(int costoEnergia){
-    this.costoEnergia = costoEnergia;
-}
-public int getdanioBase() {
-    return danioBase;
-}
-public void setdanioBase(int danioBase){
-    this.danioBase = danioBase;
-}
+    @ManyToMany(mappedBy = "ataques")
+    private List<ataque> ataques ;
+
+
+    public int getId() {
+        return id;
+    }
+    public void setId(int Id) {
+        this.id = id;
+    }
+    public  String getNombre(){
+        return nombre;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public int getcostoEnergia() {
+        return costoEnergia;
+    }
+    public void setcostoEnergia(int costoEnergia){
+        this.costoEnergia = costoEnergia;
+    }
+    public int getdanioBase() {
+        return danioBase;
+    }
+    public void setdanioBase(int danioBase){
+        this.danioBase = danioBase;
+    }
 }
     
 

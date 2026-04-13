@@ -1,6 +1,7 @@
 package clashroyale.entidades;
 
 import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 public class arma {
@@ -12,8 +13,9 @@ public class arma {
     private int bonificadorDanio;
     private float peso;
     
+	@ManyToMany(mappedBy = "armas")
+	private List<arma> armas;
     
-
     public int getId() {
 		return id;
 	}

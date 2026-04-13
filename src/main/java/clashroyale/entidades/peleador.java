@@ -1,5 +1,5 @@
 package clashroyale.entidades;
-import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.persistence.*;
 @Entity
@@ -12,20 +12,41 @@ public class peleador {
         private int energia; 
         private float defensaBase;
         private arma armaEquipada;
-        private ArrayList<arma> inventario;
-        private ArrayList<ataque> habilidades;
+        @ManyToMany 
+        @JoinTable( 
+        // Nombre de la tabla intermedia en SQL 
+        name = "peleador_arma", 
+        // FK de esta entidad 
+        joinColumns = @JoinColumn(name = "peleador_id"),  
+        // FK de la otra entidad 
+        inverseJoinColumns = @JoinColumn(name = "arma_id")  
+        ) 
+        private List<arma> armas;
+
+
+
+        @ManyToMany 
+        @JoinTable( 
+        // Nombre de la tabla intermedia en SQL 
+        name = "peleador_ataque", 
+        // FK de esta entidad 
+        joinColumns = @JoinColumn(name = "peleador_id"),  
+        // FK de la otra entidad 
+        inverseJoinColumns = @JoinColumn(name = "ataque_id")  
+        ) 
+        private List<ataque> ataques;
         
         
         
-        public peleador(long id, String nombre, int puntosVida, int energia, float defensaBase, arma armaEquipada, ArrayList<arma> inventario, ArrayList<ataque> habilidades) {
+        public peleador(long id, String nombre, int puntosVida, int energia, float defensaBase, arma armaEquipada, List<arma> armas, List<ataque> ataques) {
             this.id = id;
             this.nombre = nombre;
             this.puntosVida = puntosVida;
             this.energia = energia;
             this.defensaBase = defensaBase;
             this.armaEquipada = armaEquipada;
-            this.inventario = inventario;
-            this.habilidades = habilidades;
+            this.armas = armas;
+            this.ataques = ataques;
         }
 
 
@@ -60,20 +81,20 @@ public class peleador {
 
 
 
-        public Arma getArmaEquipada() {
+        public arma getArmaEquipada() {
             return armaEquipada;
         }
 
 
 
-        public ArrayList<arma> getInventario() {
-            return inventario;
+        public List<arma> getarmas() {
+            return armas;
         }
 
 
 
-        public ArrayList<ataque> getHabilidades() {
-            return habilidades;
+        public List<ataque> getataques() {
+            return ataques;
         }
 
 
@@ -114,29 +135,17 @@ public class peleador {
 
 
 
-        public void setInventario(ArrayList<arma> inventario) {
-            this.inventario = inventario;
+        public void setarmas(List<arma> armas) {
+            this.armas = armas;
         }
 
 
 
-        public void setHabilidades(ArrayList<ataque> habilidades) {
-            this.habilidades = habilidades;
+        public void setataques(List<ataque> ataques) {
+            this.ataques = ataques;
         }
 
 
         
 
-    
-
- 
-
-
-
-
-
-
-
-
-        
 }

@@ -19,7 +19,7 @@ public class peleador {
         // FK de esta entidad 
         joinColumns = @JoinColumn(name = "peleador_id"),  
         // FK de la otra entidad 
-        inverseJoinColumns = @JoinColumn(name = "arma_id")  
+        inverseJoinColumns = @JoinColumn(name = "arma_id")
         ) 
         private List<arma> armas;
 

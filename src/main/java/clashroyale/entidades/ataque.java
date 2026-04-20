@@ -9,7 +9,7 @@ public class ataque {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String nombre;
     private int costoEnergia;
     private int danioBase;
@@ -18,12 +18,10 @@ public class ataque {
     private List<ataque> ataques ;
 
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
-    public void setId(int Id) {
-        this.id = id;
-    }
+   
     public  String getNombre(){
         return nombre;
     }

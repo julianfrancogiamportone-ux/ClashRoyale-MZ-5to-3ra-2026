@@ -21,9 +21,7 @@ public class ataque {
     public Long getId() {
         return id;
     }
-    public void setId(Long Id) {
-        this.id = id;
-    }
+   
     public  String getNombre(){
         return nombre;
     }

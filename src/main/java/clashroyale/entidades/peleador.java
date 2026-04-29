@@ -3,7 +3,7 @@ import java.util.List;
 
 import jakarta.persistence.*;
 @Entity
-public class peleador {
+public class Peleador {
     @Id 
         @GeneratedValue(strategy = GenerationType.IDENTITY) 
         private long id; 
@@ -11,7 +11,7 @@ public class peleador {
         private int puntosVida; 
         private int energia; 
         private float defensaBase;
-        private arma armaEquipada;
+
         @ManyToMany 
         @JoinTable( 
         // Nombre de la tabla intermedia en SQL 
@@ -21,7 +21,7 @@ public class peleador {
         // FK de la otra entidad 
         inverseJoinColumns = @JoinColumn(name = "arma_id")
         ) 
-        private List<arma> armas;
+        private List<Arma> listaarmas;
 
 
 
@@ -34,19 +34,17 @@ public class peleador {
         // FK de la otra entidad 
         inverseJoinColumns = @JoinColumn(name = "ataque_id")  
         ) 
-        private List<ataque> ataques;
+        private List<Ataque> listaataques;
         
         
         
-        public peleador(long id, String nombre, int puntosVida, int energia, float defensaBase, arma armaEquipada, List<arma> armas, List<ataque> ataques) {
+        public Peleador(long id, String nombre, int puntosVida, int energia, float defensaBase) {
             this.id = id;
             this.nombre = nombre;
             this.puntosVida = puntosVida;
             this.energia = energia;
             this.defensaBase = defensaBase;
-            this.armaEquipada = armaEquipada;
-            this.armas = armas;
-            this.ataques = ataques;
+            
         }
 
 
@@ -81,21 +79,9 @@ public class peleador {
 
 
 
-        public arma getArmaEquipada() {
-            return armaEquipada;
-        }
 
 
 
-        public List<arma> getarmas() {
-            return armas;
-        }
-
-
-
-        public List<ataque> getataques() {
-            return ataques;
-        }
 
 
 
@@ -129,21 +115,10 @@ public class peleador {
 
 
 
-        public void setArmaEquipada(arma armaEquipada) {
-            this.armaEquipada = armaEquipada;
-        }
+        
 
 
 
-        public void setarmas(List<arma> armas) {
-            this.armas = armas;
-        }
-
-
-
-        public void setataques(List<ataque> ataques) {
-            this.ataques = ataques;
-        }
 
 
         

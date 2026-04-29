@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-public class arma {
+public class Arma {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,8 +13,8 @@ public class arma {
     private int bonificadorDanio;
     private float peso;
     
-	@ManyToMany(mappedBy = "armas")
-	private List<arma> armas;
+	@ManyToMany(mappedBy = "listaarmas")
+	private List<Peleador> listapeleadores;
     
     public Long getId() {
 		return id;

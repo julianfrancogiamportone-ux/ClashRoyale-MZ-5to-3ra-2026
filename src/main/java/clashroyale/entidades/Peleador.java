@@ -115,6 +115,30 @@ public class Peleador {
 
 
 
+        public List<Arma> getListaarmas() {
+            return listaarmas;
+        }
+
+
+
+        public void setListaarmas(List<Arma> listaarmas) {
+            this.listaarmas = listaarmas;
+        }
+
+
+
+        public List<Ataque> getListaataques() {
+            return listaataques;
+        }
+
+
+
+        public void setListaataques(List<Ataque> listaataques) {
+            this.listaataques = listaataques;
+        }
+
+
+
         
 
 

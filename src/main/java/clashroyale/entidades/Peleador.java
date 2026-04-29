@@ -44,7 +44,6 @@ public class Peleador {
             this.puntosVida = puntosVida;
             this.energia = energia;
             this.defensaBase = defensaBase;
-            
         }
 
 
@@ -111,6 +110,30 @@ public class Peleador {
 
         public void setDefensaBase(float defensaBase) {
             this.defensaBase = defensaBase;
+        }
+
+
+
+        public List<Arma> getListaarmas() {
+            return listaarmas;
+        }
+
+
+
+        public void setListaarmas(List<Arma> listaarmas) {
+            this.listaarmas = listaarmas;
+        }
+
+
+
+        public List<Ataque> getListaataques() {
+            return listaataques;
+        }
+
+
+
+        public void setListaataques(List<Ataque> listaataques) {
+            this.listaataques = listaataques;
         }
 
 

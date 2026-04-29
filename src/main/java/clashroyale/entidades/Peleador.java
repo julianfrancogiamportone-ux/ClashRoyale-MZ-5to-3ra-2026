@@ -44,7 +44,6 @@ public class Peleador {
             this.puntosVida = puntosVida;
             this.energia = energia;
             this.defensaBase = defensaBase;
-            
         }
 
 

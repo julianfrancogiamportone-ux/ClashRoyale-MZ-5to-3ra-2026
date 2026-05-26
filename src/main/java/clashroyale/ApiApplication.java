@@ -67,7 +67,7 @@ public class ApiApplication {
 			System.out.println("El promedio de costo de energía es aceptable.");
 		}
 
-		//descansoTactico(adri);
+		descansoTactico(adri);
 		//9. Mostrar los ataques que el peleador puede realizar con la energía actual
 		for (Ataque ataque : duo.getListaataques()) {
 			if (ataque.getcostoEnergia() <= duo.getEnergia()) {	

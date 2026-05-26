@@ -15,62 +15,62 @@ public class ApiApplication {
 	public static void main(String[] args) {
 		//1. Crear instancias de peleadores, armas y ataques
 		SpringApplication.run(ApiApplication.class, args);
-		Peleador duo = new Peleador(1L, "duo", 10000, 500, 10.0f);
-		Peleador adri = new Peleador(2L, "adri", 10000, 400, 12.0f);
-		Ataque kamekameka = new Ataque(1L, "kamekameka", 20, 30);
-		Ataque quieroqueque = new Ataque(2L, "quieroqueque", 30, 40);
-		Ataque lechazo = new Ataque(3L, "lechazo", 25, 35);
-		Arma chistecruz = new Arma(1L, "chistecruz", 25, 50f);
-		Arma lentesadri = new Arma(2L, "lentesadri", 20, 40f);
-		Arma peron = new Arma(3L, "peron", 30, 60f);
-		Arma cascoduo = new Arma(4L, "cascoduo", 25, 50f);
-		Arma ak47 = new Arma(5L, "ak47", 35, 70f);
+		Peleador peleador1 = new Peleador(1L, "peleador1", 10000, 500, 10.0f);
+		Peleador peleador2 = new Peleador(2L, "peleador2", 10000, 400, 12.0f);
+		Ataque ataque1 = new Ataque(1L, "ataque1", 20, 30);
+		Ataque ataque2 = new Ataque(2L, "ataque2", 30, 40);
+		Ataque ataque3 = new Ataque(3L, "ataque3", 25, 35);
+		Arma arma1 = new Arma(1L, "arma1", 25, 50f);
+		Arma arma2 = new Arma(2L, "arma2", 20, 40f);
+		Arma arma3 = new Arma(3L, "arma3", 30, 60f);
+		Arma arma4 = new Arma(4L, "arma4", 25, 50f);
+		Arma arma5 = new Arma(5L, "arma5", 35, 70f);
 		//2. Asignar armas y ataques a los peleadores
-		System.out.println(duo.getNombre());
-		System.out.println(duo.getPuntosVida());
-		List<Arma> armas1 = new ArrayList<Arma>(java.util.Arrays.asList(chistecruz, peron, ak47));
-		List<Arma> armas2 = new ArrayList<Arma>(java.util.Arrays.asList(lentesadri, cascoduo));
+		System.out.println(peleador1.getNombre());
+		System.out.println(peleador1.getPuntosVida());
+		List<Arma> armas1 = new ArrayList<Arma>(java.util.Arrays.asList(arma1, arma3, arma5));
+		List<Arma> armas2 = new ArrayList<Arma>(java.util.Arrays.asList(arma2, arma4));
 		//3. Comparar las armas de los peleadores y mostrar cuál es más fuerte
 
-		duo.setListaarmas(armas1);
-		adri.setListaarmas(armas2);
-		if(chistecruz.getBonificadorDanio() > lentesadri.getBonificadorDanio()) {
-			System.out.println(duo.getNombre() + " tiene el arma más fuerte: " + chistecruz.getNombre());
-		} else if (chistecruz.getBonificadorDanio() < lentesadri.getBonificadorDanio()) {
-			System.out.println(adri.getNombre() + " tiene el arma más fuerte: " + lentesadri.getNombre());
+		peleador1.setListaarmas(armas1);
+		peleador2.setListaarmas(armas2);
+		if(arma1.getBonificadorDanio() > arma2.getBonificadorDanio()) {
+			System.out.println(peleador1.getNombre() + " tiene el arma más fuerte: " + arma1.getNombre());
+		} else if (arma1.getBonificadorDanio() < arma2.getBonificadorDanio()) {
+			System.out.println(peleador2.getNombre() + " tiene el arma más fuerte: " + arma2.getNombre());
 		} else {
 			System.out.println("Ambos peleadores tienen armas igual de fuertes.");
 		}
 		//4. Comparar los ataques de los peleadores y mostrar cuál es más fuerte
-		List <Ataque> habilidades = new ArrayList<Ataque>(java.util.Arrays.asList(kamekameka, quieroqueque, lechazo));
+		List <Ataque> habilidades = new ArrayList<Ataque>(java.util.Arrays.asList(ataque1, ataque2, ataque3));
 		for (Ataque ataque : habilidades) {
-			duo.getListaataques().add(ataque);
+			peleador1.getListaataques().add(ataque);
 		}
 		Ataque mejorAtaque = null;
-		for (Ataque ataque : duo.getListaataques()) {
+		for (Ataque ataque : peleador1.getListaataques()) {
 			if (mejorAtaque == null || ataque.getdanioBase() > mejorAtaque.getdanioBase()) {
 				mejorAtaque = ataque;
 			}
 		}
-		System.out.println("El mejor ataque de " + duo.getNombre() + " es: " + mejorAtaque.getNombre());
+		System.out.println("El mejor ataque de " + peleador1.getNombre() + " es: " + mejorAtaque.getNombre());
 
 		//5. Calcular el promedio de costo de energía de los ataques de un peleador y mostrar una advertencia si el promedio es mayor a 50
 		double sumaCostoEnergia = 0;
-		for (Ataque ataque : duo.getListaataques()) {
+		for (Ataque ataque : peleador1.getListaataques()) {
 			sumaCostoEnergia += ataque.getcostoEnergia();
 		}
-		double promedioCostoEnergia = (double) sumaCostoEnergia / duo.getListaataques().size();
-		System.out.println("El promedio de costo de energía de " + duo.getNombre() + " es: " + promedioCostoEnergia);
+		double promedioCostoEnergia = (double) sumaCostoEnergia / peleador1.getListaataques().size();
+		System.out.println("El promedio de costo de energía de " + peleador1.getNombre() + " es: " + promedioCostoEnergia);
 		if (promedioCostoEnergia > 50) {
 			System.out.println("Advertencia: El promedio de costo de energía es mayor a 50.");
 		} else {
 			System.out.println("El promedio de costo de energía es aceptable.");
 		}
 
-		descansoTactico(adri);
+		descansoTactico(peleador2);
 		//9. Mostrar los ataques que el peleador puede realizar con la energía actual
-		for (Ataque ataque : duo.getListaataques()) {
-			if (ataque.getcostoEnergia() <= duo.getEnergia()) {	
+		for (Ataque ataque : peleador1.getListaataques()) {
+			if (ataque.getcostoEnergia() <= peleador1.getEnergia()) {	
 				System.out.println("Ataque: " + ataque.getNombre() + ", Costo de Energía: " + ataque.getcostoEnergia());
 			}
 			else {
@@ -78,19 +78,19 @@ public class ApiApplication {
 			}
 		}
 		//10. Simular un combate entre dos peleadores utilizando sus ataques y mostrar el resultado del combate (quién gana o si es un empate)
-		while (duo.getPuntosVida() > 0 && adri.getPuntosVida() > 0) {
-			if (duo.getEnergia() < kamekameka.getcostoEnergia() && adri.getEnergia() < quieroqueque.getcostoEnergia()) {
+		while (peleador1.getPuntosVida() > 0 && peleador2.getPuntosVida() > 0) {
+			if (peleador1.getEnergia() < ataque1.getcostoEnergia() && peleador2.getEnergia() < ataque2.getcostoEnergia()) {
 				System.out.println("Ambos peleadores no tienen suficiente energía para realizar un ataque. El combate termina en empate.");
 				break;
 			}
-			primerGolpe(duo, adri, kamekameka);
-			if (adri.getPuntosVida() <= 0) {
-				System.out.println(adri.getNombre() + " ha sido derrotado.");
+			primerGolpe(peleador1, peleador2, ataque1);
+			if (peleador2.getPuntosVida() <= 0) {
+				System.out.println(peleador2.getNombre() + " ha sido derrotado.");
 				break;
 			}
-			primerGolpe(adri, duo, quieroqueque);
-			if (duo.getPuntosVida() <= 0) {
-				System.out.println(duo.getNombre() + " ha sido derrotado.");
+			primerGolpe(peleador2, peleador1, ataque2);
+			if (peleador1.getPuntosVida() <= 0) {
+				System.out.println(peleador1.getNombre() + " ha sido derrotado.");
 				break;
 			}
 		}

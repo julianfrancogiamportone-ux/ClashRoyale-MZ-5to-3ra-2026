@@ -1,50 +1,51 @@
 package clashroyale.entidades;
 import java.util.List;
+import java.util.ArrayList;
 
 import jakarta.persistence.*;
 @Entity
 public class Peleador {
     @Id 
-        @GeneratedValue(strategy = GenerationType.IDENTITY) 
-        private long id; 
-        private String nombre;
-        private int puntosVida; 
-        private int energia; 
-        private float defensaBase;
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
+    private long id; 
+    private String nombre;
+    private int puntosVida; 
+    private int energia; 
+    private float defensaBase;
 
-        @ManyToMany 
-        @JoinTable( 
+    @ManyToMany 
+    @JoinTable( 
         // Nombre de la tabla intermedia en SQL 
         name = "peleador_arma", 
         // FK de esta entidad 
         joinColumns = @JoinColumn(name = "peleador_id"),  
         // FK de la otra entidad 
         inverseJoinColumns = @JoinColumn(name = "arma_id")
-        ) 
-        private List<Arma> listaarmas;
+    ) 
+    private List<Arma> listaarmas = new ArrayList<>();
 
-
-
-        @ManyToMany 
-        @JoinTable( 
+    @ManyToMany 
+    @JoinTable( 
         // Nombre de la tabla intermedia en SQL 
         name = "peleador_ataque", 
         // FK de esta entidad 
         joinColumns = @JoinColumn(name = "peleador_id"),  
         // FK de la otra entidad 
         inverseJoinColumns = @JoinColumn(name = "ataque_id")  
-        ) 
-        private List<Ataque> listaataques;
-        
-        
-        
-        public Peleador(long id, String nombre, int puntosVida, int energia, float defensaBase) {
-            this.id = id;
-            this.nombre = nombre;
-            this.puntosVida = puntosVida;
-            this.energia = energia;
-            this.defensaBase = defensaBase;
-        }
+    ) 
+    private List<Ataque> listaataques = new ArrayList<>();
+
+    public Peleador() {
+        // Constructor requerido por JPA
+    }
+
+    public Peleador(long id, String nombre, int puntosVida, int energia, float defensaBase) {
+        this.id = id;
+        this.nombre = nombre;
+        this.puntosVida = puntosVida;
+        this.energia = energia;
+        this.defensaBase = defensaBase;
+    }
 
 
 

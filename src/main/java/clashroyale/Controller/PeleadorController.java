@@ -8,6 +8,7 @@ import clashroyale.entidades.Peleador;
 
 @RestController
 @RequestMapping("/api/peleadores")
+@CrossOrigin (origins="http://localhost:8080")
 public class PeleadorController {
 
     @Autowired

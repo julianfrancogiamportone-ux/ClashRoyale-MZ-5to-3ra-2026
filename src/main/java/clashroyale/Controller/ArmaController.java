@@ -7,6 +7,7 @@ import clashroyale.Iservice.ArmaIservice;
 import clashroyale.entidades.Arma;
 
 @RestController
+@CrossOrigin (origins="*")
 @RequestMapping("/api/armas")
 public class ArmaController {
 

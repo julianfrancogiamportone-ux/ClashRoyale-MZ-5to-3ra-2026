@@ -1,6 +1,7 @@
 // Variables Globales 
 // api de base de datos, gestionado en el controller 
-const API_DRAGONBALL = 'http://localhost:8080/api/peleadores'; 
+const API_CLASHROYALE = 'http://localhost:8080/api/peleadores'; 
+const API_SUPERHEROES = 'http://localhost:8081/api/characters'; // La ruta de Facu
 
 // elementos del html 
 const fighter1Select = document.getElementById('fighter1'); 
@@ -11,30 +12,42 @@ const fightButton = document.getElementById('fightButton');
 const resultDiv = document.getElementById('result'); 
 
 // guardamos los datos obtenidos 
-let characters = []; 
+let personajesClash = []; 
+let personajesSuperheroes = [];
 
 // Emotes que se muestran en la pantalla de victoria/derrota 
 const EMOTE_WIN = 'images/emote_g_2.gif';   // caballero brindando con té: el ganador 
 const EMOTE_LOSE = 'images/emote_p.gif';  // cerdito golpeado: el perdedor 
 const EMOTE_DRAW = 'images/emote_g_1.gif';    // cerdito sorprendido: empate 
 
-// Traer a los luchadores 
+// Traer a los luchadores de AMBOS mundos
 async function fetchData() { 
+    // Traemos tus personajes (Clash Royale)
     try { 
-        const responseDB = await fetch(API_DRAGONBALL); 
-        characters = await responseDB.json();   
-        
-        // 1. CORRECCIÓN: Llamamos a loadFighters() cuando los datos llegan con éxito
-        loadFighters();
+        const responseClash = await fetch(API_CLASHROYALE); 
+        personajesClash = await responseClash.json();   
     } catch (error) { 
-        console.error('Error al cargar los personajes:', error); 
+        console.error('Error al cargar personajes de Clash Royale:', error); 
     } 
-} // 2. CORRECCIÓN: Cerramos la función fetchData() acá.
 
-// Llenar las listas 
-// por cada peleador creamos un option en el selector 
+    // Traemos los personajes de Facu (Superhéroes)
+    try { 
+        const responseHero = await fetch(API_SUPERHEROES); 
+        personajesSuperheroes = await responseHero.json();   
+    } catch (error) { 
+        console.error('Error al cargar personajes de Superhéroes:', error); 
+    } 
+
+    // Llamamos a loadFighters() cuando ambos llegaron con éxito
+    loadFighters();
+} 
+
+// Llenar las listas combinando ambos mundos
 function loadFighters() { 
-    [...characters].forEach(fighter => { 
+    // Unimos los dos arreglos en uno solo
+    const todosLosPersonajes = [...personajesClash, ...personajesSuperheroes];
+
+    todosLosPersonajes.forEach(fighter => { 
         const option1 = document.createElement('option'); 
         option1.value = JSON.stringify(fighter); 
         option1.text = `${fighter.nombre} `; 
@@ -47,24 +60,25 @@ function loadFighters() {
     }); 
     
     // Verificamos que haya personajes antes de intentar mostrar la imagen
-    if(characters.length > 0) {
+    if(todosLosPersonajes.length > 0) {
         const selected = JSON.parse(fighter1Select.value); 
-        fighter1Image.src = selected.url_imagen || 'placeholder.jpg'; 
+        // Agregamos la alternativa .url por si la BD de Facu lo tiene así
+        fighter1Image.src = selected.url_imagen || selected.url || 'placeholder.jpg'; 
+        
         const selected2  = JSON.parse(fighter2Select.value); 
-        fighter2Image.src = selected2.url_imagen || 'placeholder.jpg'; 
+        fighter2Image.src = selected2.url_imagen || selected2.url || 'placeholder.jpg'; 
     }
 } 
 
 // Reaccionar a los cambios 
-// Actualizar la imagen al seleccionar un personaje 
 fighter1Select.addEventListener('change', () => { 
     const selected = JSON.parse(fighter1Select.value); 
-    fighter1Image.src = selected.url_imagen || 'placeholder.jpg'; 
+    fighter1Image.src = selected.url_imagen || selected.url || 'placeholder.jpg'; 
 }); 
 
 fighter2Select.addEventListener('change', () => { 
     const selected = JSON.parse(fighter2Select.value); 
-    fighter2Image.src = selected.url_imagen || 'placeholder.jpg'; 
+    fighter2Image.src = selected.url_imagen || selected.url || 'placeholder.jpg'; 
 }); 
 
 // La Lógica de Batalla  
@@ -101,5 +115,5 @@ fightButton.addEventListener('click', () => {
     resultDiv.classList.remove('hidden'); 
 }); 
 
-// 3. CORRECCIÓN: Ejecutamos la función para que todo el proceso comience
+// Ejecutamos la función para que todo el proceso comience
 fetchData();

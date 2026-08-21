@@ -7,6 +7,7 @@ import clashroyale.Iservice.AtaqueIservice;
 import clashroyale.entidades.Ataque;
 
 @RestController
+@CrossOrigin (origins="*")
 @RequestMapping("/api/ataques")
 public class AtaqueController {
 

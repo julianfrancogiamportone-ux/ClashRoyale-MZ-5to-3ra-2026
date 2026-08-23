@@ -165,57 +165,57 @@ INSERT INTO ataque (nombre, costo_energia, danio_base) VALUES
 -- Campos: nombre | puntos_vida | energia | defensa_base
 -- ------------------------------------------------------------
 
-INSERT INTO peleador (nombre, puntos_vida, energia, defensa_base) VALUES
-('Príncipe',              1400, 100, 18.0),   -- 1
-('Arquera',                750,  90,  9.0),   -- 2
-('Gigante',               2000, 110, 28.0),   -- 3
-('Príncipe Oscuro',       1350, 105, 17.5),   -- 4
-('Espadachín',             680,  85,  8.5),   -- 5
-('Caballero',             1200, 100, 16.0),   -- 6
-('Mini PEKKA',            1100, 100, 15.0),   -- 7
-('Valkiria',              1250,  98, 16.5),   -- 8
-('PEKKA',                 2500, 115, 32.0),   -- 9
-('Bebé Dragón',            800, 108, 11.0),   -- 10
-('Mosquetero',             700,  88, 10.0),   -- 11
-('Bruja',                  900, 120, 12.0),   -- 12
-('Gigante de Piedra',     2200, 112, 30.0),   -- 13
-('Leñador',               1050, 102, 14.0),   -- 14
-('Minero',                 950,  95, 13.5),   -- 15
-('Gigante Eléctrico',     2100, 110, 29.0),   -- 16
-('Bruja de Hielo',         850, 118, 11.5),   -- 17
-('Bárbaro',               1000,  96, 13.0),   -- 18
-('Esqueleto',              200,  70,  2.0),   -- 19
-('Goblin',                 300,  75,  4.0),   -- 20
-('Drag Baby',              500, 100,  7.0),   -- 21
-('Caballero de Hielo',    1100, 100, 15.5),   -- 22
-('Cazador Real',           950,  92, 12.5),   -- 23
-('Guardia Real',          1050,  97, 14.5),   -- 24
-('Super Bárbaro',         1700, 108, 23.0),   -- 25
-('Super Arquera',          900,  92, 10.5),   -- 26
-('Super Gigante',         2800, 118, 36.0),   -- 27
-('Super Mini PEKKA',      1600, 106, 21.0),   -- 28
-('Super Valkiria',        1800, 106, 24.0),   -- 29
-('Super PEKKA',           3200, 120, 40.0),   -- 30
-('Electro Dragón',        1500, 112, 20.0),   -- 31
-('Electro Gigante',       2300, 113, 31.0),   -- 32
-('Electro Espíritu',       250,  80,  3.5),   -- 33
-('Oso Garra',             1800, 110, 25.0),   -- 34
-('Campeon',               1600, 108, 22.0),   -- 35
-('Rey Bárbaro',           3000, 120, 38.0),   -- 36  (CoC)
-('Reina Arquera',         1200, 115, 16.0),   -- 37  (CoC)
-('Gran Guardián',         3500, 125, 42.0),   -- 38  (CoC)
-('Rey Real',              3200, 122, 40.0),   -- 39  (CoC)
-('Constructor',            800,  90, 10.0),   -- 40  (CoC)
-('Goblin Constructor',     400,  78,  5.5),   -- 41
-('Bárbaro Barril',        1000,  95, 14.0),   -- 42
-('Jinete Cerdo',          1150,  98, 15.5),   -- 43
-('Bruja Oscura',          1000, 122, 13.0),   -- 44
-('Gigante Lechero',       1900, 109, 27.0),   -- 45
-('Mago Real',              900, 115, 12.0),   -- 46
-('Guardia Esqueleto',      350,  72,  4.5),   -- 47
-('Pirata Goblin',          600,  82,  8.0),   -- 48
-('Sabueso de Lava',       3000, 118, 38.0),   -- 49
-('Dragón Infernal',       2400, 116, 33.0);   -- 50
+INSERT INTO peleador (nombre, puntos_vida, energia, defensa_base, url_imagen) VALUES
+('Príncipe',              1400, 100, 18.0, 'https://static.wikia.nocookie.net/clashroyale/images/b/be/PrinceCard.png/revision/latest'),   -- 1
+('Arquera',                750,  90,  9.0, 'https://static.wikia.nocookie.net/clashroyale/images/a/af/ArchersCard.png/revision/latest'),   -- 2
+('Gigante',               2000, 110, 28.0, 'https://static.wikia.nocookie.net/clashroyale/images/b/b1/GiantCard.png/revision/latest'),   -- 3
+('Príncipe Oscuro',       1350, 105, 17.5, 'https://static.wikia.nocookie.net/clashroyale/images/4/46/DarkPrinceCard.png/revision/latest'),   -- 4
+('Espadachín',             680,  85,  8.5, 'https://static.wikia.nocookie.net/clashroyale/images/3/37/SpearGoblinsCard.png/revision/latest'),   -- 5
+('Caballero',             1200, 100, 16.0, 'https://static.wikia.nocookie.net/clashroyale/images/5/54/KnightCard.png/revision/latest'),   -- 6
+('Mini PEKKA',            1100, 100, 15.0, 'https://static.wikia.nocookie.net/clashroyale/images/7/7b/MiniPEKKACard.png/revision/latest'),   -- 7
+('Valkiria',              1250,  98, 16.5, 'https://static.wikia.nocookie.net/clashroyale/images/e/e2/ValkyrieCard.png/revision/latest'),   -- 8
+('PEKKA',                 2500, 115, 32.0, 'https://static.wikia.nocookie.net/clashroyale/images/f/fe/PEKKACard.png/revision/latest'),   -- 9
+('Bebé Dragón',            800, 108, 11.0, 'https://static.wikia.nocookie.net/clashroyale/images/3/35/BabyDragonCard.png/revision/latest'),   -- 10
+('Mosquetero',             700,  88, 10.0, 'https://static.wikia.nocookie.net/clashroyale/images/e/ee/MusketeerCard.png/revision/latest'),   -- 11
+('Bruja',                  900, 120, 12.0, 'https://static.wikia.nocookie.net/clashroyale/images/7/7f/WitchCard.png/revision/latest'),   -- 12
+('Gigante de Piedra',     2200, 112, 30.0, 'https://static.wikia.nocookie.net/clashroyale/images/d/d4/GolemCard.png/revision/latest'),   -- 13
+('Leñador',               1050, 102, 14.0, 'https://static.wikia.nocookie.net/clashroyale/images/5/52/LumberjackCard.png/revision/latest'),   -- 14
+('Minero',                 950,  95, 13.5, 'https://static.wikia.nocookie.net/clashroyale/images/2/21/MinerCard.png/revision/latest'),   -- 15
+('Gigante Eléctrico',     2100, 110, 29.0, 'https://static.wikia.nocookie.net/clashroyale/images/0/08/ElectroGiantCard.png/revision/latest'),   -- 16
+('Bruja de Hielo',         850, 118, 11.5, 'https://static.wikia.nocookie.net/clashroyale/images/d/d3/IceWizardCard.png/revision/latest'),   -- 17
+('Bárbaro',               1000,  96, 13.0, 'https://static.wikia.nocookie.net/clashroyale/images/2/2e/BarbariansCard.png/revision/latest'),   -- 18
+('Esqueleto',              200,  70,  2.0, 'https://static.wikia.nocookie.net/clashroyale/images/f/f0/SkeletonsCard.png/revision/latest'),   -- 19
+('Goblin',                 300,  75,  4.0, 'https://static.wikia.nocookie.net/clashroyale/images/b/bd/GoblinsCard.png/revision/latest'),   -- 20
+('Drag Baby',              500, 100,  7.0, 'https://static.wikia.nocookie.net/clashroyale/images/3/35/BabyDragonCard.png/revision/latest'),   -- 21
+('Caballero de Hielo',    1100, 100, 15.5, 'https://static.wikia.nocookie.net/clashroyale/images/5/5f/IceGolemCard.png/revision/latest'),   -- 22
+('Cazador Real',           950,  92, 12.5, 'https://static.wikia.nocookie.net/clashroyale/images/6/64/HunterCard.png/revision/latest'),   -- 23
+('Guardia Real',          1050,  97, 14.5, 'https://static.wikia.nocookie.net/clashroyale/images/5/51/GuardsCard.png/revision/latest'),   -- 24
+('Super Bárbaro',         1700, 108, 23.0, 'https://static.wikia.nocookie.net/clashroyale/images/2/2e/BarbariansCard.png/revision/latest'),   -- 25
+('Super Arquera',          900,  92, 10.5, 'https://static.wikia.nocookie.net/clashroyale/images/e/ef/SuperArchersCard.png/revision/latest'),   -- 26
+('Super Gigante',         2800, 118, 36.0, 'https://static.wikia.nocookie.net/clashroyale/images/b/b1/GiantCard.png/revision/latest'),   -- 27
+('Super Mini PEKKA',      1600, 106, 21.0, 'https://static.wikia.nocookie.net/clashroyale/images/b/b3/SuperMiniPEKKACard.png/revision/latest'),   -- 28
+('Super Valkiria',        1800, 106, 24.0, 'https://static.wikia.nocookie.net/clashroyale/images/e/e2/ValkyrieCard.png/revision/latest'),   -- 29
+('Super PEKKA',           3200, 120, 40.0, 'https://static.wikia.nocookie.net/clashroyale/images/f/fe/PEKKACard.png/revision/latest'),   -- 30
+('Electro Dragón',        1500, 112, 20.0, 'https://static.wikia.nocookie.net/clashroyale/images/8/8a/ElectroDragonCard.png/revision/latest'),   -- 31
+('Electro Gigante',       2300, 113, 31.0, 'https://static.wikia.nocookie.net/clashroyale/images/0/08/ElectroGiantCard.png/revision/latest'),   -- 32
+('Electro Espíritu',       250,  80,  3.5, 'https://static.wikia.nocookie.net/clashroyale/images/7/70/ElectroSpiritCard.png/revision/latest'),   -- 33
+('Oso Garra',             1800, 110, 25.0, 'https://static.wikia.nocookie.net/clashroyale/images/9/9e/RascalsCard.png/revision/latest'),   -- 34
+('Campeon',               1600, 108, 22.0, 'https://static.wikia.nocookie.net/clashroyale/images/0/04/GoldenKnightCard.png/revision/latest'),   -- 35
+('Rey Bárbaro',           3000, 120, 38.0, 'https://static.wikia.nocookie.net/clashroyale/images/d/d3/SkeletonKingCard.png/revision/latest'),   -- 36
+('Reina Arquera',         1200, 115, 16.0, 'https://static.wikia.nocookie.net/clashroyale/images/2/24/PrincessCard.png/revision/latest'),   -- 37
+('Gran Guardián',         3500, 125, 42.0, 'https://static.wikia.nocookie.net/clashroyale/images/5/5d/MonkCard.png/revision/latest'),   -- 38
+('Rey Real',              3200, 122, 40.0, 'https://static.wikia.nocookie.net/clashroyale/images/0/0b/MegaKnightCard.png/revision/latest'),   -- 39
+('Constructor',            800,  90, 10.0, 'https://static.wikia.nocookie.net/clashroyale/images/4/44/GoblinGiantCard.png/revision/latest'),   -- 40
+('Goblin Constructor',     400,  78,  5.5, 'https://static.wikia.nocookie.net/clashroyale/images/b/bd/GoblinsCard.png/revision/latest'),   -- 41
+('Bárbaro Barril',        1000,  95, 14.0, 'https://static.wikia.nocookie.net/clashroyale/images/b/b5/BarbarianBarrelCard.png/revision/latest'),   -- 42
+('Jinete Cerdo',          1150,  98, 15.5, 'https://static.wikia.nocookie.net/clashroyale/images/3/30/HogRiderCard.png/revision/latest'),   -- 43
+('Bruja Oscura',          1000, 122, 13.0, 'https://static.wikia.nocookie.net/clashroyale/images/7/7f/NightWitchCard.png/revision/latest'),   -- 44
+('Gigante Lechero',       1900, 109, 27.0, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaRNOIbTDhTxrMnYuBgqys_mOywvgPnlTBiulxTcEnUw&s=10'),   -- 45
+('Mago Real',              900, 115, 12.0, 'https://static.wikia.nocookie.net/clashroyale/images/c/cb/MagicArcherCard.png/revision/latest'),   -- 46
+('Guardia Esqueleto',      350,  72,  4.5, 'https://static.wikia.nocookie.net/clashroyale/images/d/d0/SkeletonArmyCard.png/revision/latest'),   -- 47
+('Pirata Goblin',          600,  82,  8.0, 'https://static.wikia.nocookie.net/clashroyale/images/7/70/DartGoblinCard.png/revision/latest'),   -- 48
+('Sabueso de Lava',       3000, 118, 38.0, 'https://static.wikia.nocookie.net/clashroyale/images/d/de/LavaHoundCard.png/revision/latest'),   -- 49
+('Dragón Infernal',       2400, 116, 33.0, 'https://static.wikia.nocookie.net/clashroyale/images/9/95/InfernoDragonCard.png/revision/latest');   -- 50
 
 -- ------------------------------------------------------------
 -- Relaciones peleador_arma (2-3 armas por peleador)

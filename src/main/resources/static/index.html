@@ -1,0 +1,49 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Clash Royale: ¡Batalla de Cartas!</title> 
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/style.css"> 
+</head> 
+<body> 
+    <h1>👑 ¡Batalla de Clash Royale! 👑</h1> 
+ 
+    <div id="fight-container"> 
+        <div class="player-column"> 
+            <div class="player"> 
+                <h2>Jugador 1</h2> 
+                <div class="fighter-row"> 
+                    <div class="card-frame"> 
+                        <img id="fighter1Image" src="placeholder.jpg" alt="Carta 1" 
+class="fighter-img"> 
+                    </div> 
+                </div> 
+            </div> 
+            <select id="fighter1"></select> 
+        </div> 
+ 
+        <div class="vs-divider">VS</div> 
+ 
+        <div class="player-column"> 
+            <div class="player"> 
+                <h2>Jugador 2</h2> 
+                <div class="fighter-row"> 
+                    <div class="card-frame"> 
+                        <img id="fighter2Image" src="placeholder.jpg" alt="Carta 2" 
+class="fighter-img"> 
+                    </div> 
+                </div> 
+            </div> 
+            <select id="fighter2"></select> 
+        </div> 
+    </div> 
+ 
+    <button id="fightButton">¡A la Batalla!</button> 
+ 
+    <div id="result" class="hidden"></div> 
+ 
+    <script src="/js/crbattle.js"></script> 
+</body> 
+</html>

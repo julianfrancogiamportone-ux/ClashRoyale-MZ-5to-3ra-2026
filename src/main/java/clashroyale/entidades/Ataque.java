@@ -61,4 +61,9 @@ public class Ataque {
         System.out.println("Costo de energía: " + costoEnergia);
         System.out.println("Daño base: " + danioBase);
     }
+
+    public Ataque() {
+    }
+
+    
 }
